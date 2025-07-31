@@ -150,9 +150,11 @@ class CourseSelectionSystem:
     def add(self, lesson: Lesson | str):
         if isinstance(lesson, str):
             lesson = self.get_lesson(lesson)
-        return self._add_drop_request("add", lesson)
+        ret_val = self._add_drop_request("add", lesson)
+        return ret_val
 
     def drop(self, lesson: Lesson | str):
         if isinstance(lesson, str):
             lesson = self.get_lesson(lesson)
-        return self._add_drop_request("drop", lesson)
+        ret_val = self._add_drop_request("add", lesson)
+        return ret_val
